@@ -11,15 +11,17 @@ class CompleteReport(SimpleReport):
             p['nome_da_empresa']
         ), products)).most_common()
 
-        companies = []
+        # company = '\n'.join(map(lambda c: (
+        #     f'- {c[0]}: {c[1]}'
+        #     ), stock_by_company))
+
+        companies_and_stocks = ''
 
         for company, stock in stock_by_company:
-            companies.append(f"- {company}: {stock}")
+            companies_and_stocks += f"- {company}: {stock}\n"
 
         return (
             f"{simple_report}\n"
             "Produtos estocados por empresa:\n"
-            f"{companies[0]}\n"
-            f"{companies[1]}\n"
-            f"{companies[2]}\n"
+            f"{companies_and_stocks}"
         )
