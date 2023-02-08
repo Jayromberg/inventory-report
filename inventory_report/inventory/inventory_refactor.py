@@ -9,7 +9,6 @@ class InventoryRefactor:
         self.data = []
 
     def import_data(self, path: str, report_type: str):
-        print(self.importer)
         inventory = self.importer.import_data(path)
         self.data += inventory
 
